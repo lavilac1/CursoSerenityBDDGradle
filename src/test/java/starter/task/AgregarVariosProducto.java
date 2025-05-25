@@ -16,7 +16,7 @@ public class AgregarVariosProducto  implements Task {
         return Tasks.instrumented(AgregarVariosProducto.class);
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         List<WebElementFacade> botones = ProductosPage.BOTONES_ADD_TO_CART.resolveAllFor(actor);
         for (int i = 0; i < 4; i++) {

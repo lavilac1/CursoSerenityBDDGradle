@@ -25,7 +25,7 @@ public class IngresarDatosCheckout   implements Task {
 
 
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(nombre).into(CheckoutPage.INPUT_NOMBRE),

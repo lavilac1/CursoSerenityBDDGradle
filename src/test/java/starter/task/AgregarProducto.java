@@ -9,7 +9,7 @@ import starter.ui.ProductosPage;
 
 public class AgregarProducto implements Task {
 
-    public static AgregarProducto alCarrito(String producto) {
+    public static AgregarProducto alCarrito() {
         return Tasks.instrumented(AgregarProducto.class);
     }
 

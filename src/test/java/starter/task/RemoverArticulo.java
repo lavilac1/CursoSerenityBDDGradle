@@ -14,7 +14,7 @@ public class RemoverArticulo implements Task {
         return Tasks.instrumented(RemoverArticulo.class);
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(ProductosPage.BTN_BACKPACK)

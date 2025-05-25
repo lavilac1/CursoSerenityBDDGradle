@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 import io.cucumber.java.Before;
+import io.cucumber.java.en.And;
 import io.cucumber.java.es.*;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
@@ -31,22 +32,22 @@ public class CompraSteps {
         theActorInTheSpotlight().attemptsTo(LoginTask.conCredenciales(usuario, contrasena));
     }
 
-    @Cuando("agrega el artículo {string} al carrito")
-    public void agregar_articulo_al_carrito(String producto) {
-        theActorInTheSpotlight().attemptsTo(AgregarProducto.alCarrito(producto));
+    @Cuando("agrega el artículo Sauce Labs Backpack al carrito")
+    public void agregar_articulo_al_carrito() {
+        theActorInTheSpotlight().attemptsTo(AgregarProducto.alCarrito());
     }
 
-    @Cuando("procede al carrito y hace clic en Checkout")
-    public void procede_al_carrito_y_checkout() {
+    @And("entra al carrito y hace clic en Checkout")
+    public void entra_al_carrito_y_checkout() {
         theActorInTheSpotlight().attemptsTo(ProcederAlCheckout.desdeCarrito());
     }
 
-    @Cuando("ingresa los datos {string}, {string}, {string}")
+    @And("ingresa los datos {string}, {string}, {string}")
     public void ingresar_datos_de_checkout(String nombre, String apellido, String codigoPostal) {
         theActorInTheSpotlight().attemptsTo(IngresarDatosCheckout.conDatos(nombre, apellido, codigoPostal));
     }
 
-    @Cuando("finaliza la compra")
+    @And("finaliza la compra")
     public void finalizar_compra() {
         theActorInTheSpotlight().attemptsTo(FinalizarCompra.confirmar());
     }

@@ -17,7 +17,7 @@ public class LoginTask implements Task {
         return Tasks.instrumented(LoginTask.class, usuario, contrasena);
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Enter.theValue(usuario).into(LoginPage.USERNAME),

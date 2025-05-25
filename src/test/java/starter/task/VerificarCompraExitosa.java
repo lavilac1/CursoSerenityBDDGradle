@@ -18,7 +18,7 @@ public class VerificarCompraExitosa implements Task {
         return Tasks.instrumented(VerificarCompraExitosa.class).toString();
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.should(
                 seeThat("El mensaje de confirmación", Text.of(CheckoutPage.MENSAJE_CONFIRMACION),

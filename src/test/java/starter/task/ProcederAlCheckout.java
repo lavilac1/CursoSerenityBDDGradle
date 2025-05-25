@@ -13,7 +13,7 @@ public class ProcederAlCheckout implements Task {
         return Tasks.instrumented(ProcederAlCheckout.class);
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(CarritoPage.BTN_CART),

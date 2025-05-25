@@ -8,7 +8,8 @@ public class ProductosPage {
             .located(By.xpath("/html/body/div[1]/div[2]/div[2]/div/div[2]/div/div[1]/div[3]/button"));
 
 
-    public static final Target BOTONES_ADD_TO_CART = Target.the("Botones de agregar al carrito")
+    public static final Target BOTONES_ADD_TO_CART = Target
+            .the("Botones de agregar al carrito")
             .locatedBy("//button[contains(text(),'ADD TO CART')]");
 
 }

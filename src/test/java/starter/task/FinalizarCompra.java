@@ -17,7 +17,7 @@ public class FinalizarCompra implements Task {
         return Tasks.instrumented(FinalizarCompra.class);
     }
 
-    @Override
+
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(CheckoutPage.BTN_FINALIZAR)

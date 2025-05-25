@@ -6,20 +6,20 @@ Feature: Compra de productos en SwagLabs
 
 
   Scenario: Comprar un artículo exitosamente
-    When agrega el artículo "Sauce Labs Backpack" al carrito
-    And procede al carrito y hace clic en Checkout
+    When agrega el artículo Sauce Labs Backpack al carrito
+    And entra al carrito y hace clic en Checkout
     And ingresa los datos "Luisa", "Avila", "501010"
     And finaliza la compra
     Then debería ver el mensaje de confirmación de la compra
 
   Scenario: Eliminar un artículo del carrito de compra
-    When agrega el artículo "Sauce Labs Backpack" al carrito
+    When agrega el artículo Sauce Labs Backpack al carrito
     And remover el articulo del producto
     Then debería ver el boton de ADD TO CART nuevamente
 
   Scenario: Comprar cuatro artículos exitosamente
     When agrego los primeros  articulos al carrito
-    And procede al carrito y hace clic en Checkout
+    And entra al carrito y hace clic en Checkout
     And ingresa los datos "Luisa", "Avila", "501010"
     And finaliza la compra
     Then debería ver el mensaje de confirmación de la compra
