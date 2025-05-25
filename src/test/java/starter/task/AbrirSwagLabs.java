@@ -3,7 +3,7 @@ package starter.task;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Open;
-import net.serenitybdd.screenplay.actions.OpenUrl;
+
 
 import starter.ui.Homepage;
 
