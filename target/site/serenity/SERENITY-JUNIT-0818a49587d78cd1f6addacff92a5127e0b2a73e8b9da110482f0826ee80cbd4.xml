@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Compra de productos en SwagLabs" skipped="0" tests="3" time="66.11" timestamp="2025-05-25 03:58:13"><testcase name="Comprar un artículo exitosamente"/><testcase name="Eliminar un artículo del carrito de compra"/><testcase name="Comprar cuatro artículos exitosamente"/></testsuite>
