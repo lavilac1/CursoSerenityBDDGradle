@@ -24,7 +24,7 @@ public class CompraSteps {
 
     @Dado("que el usuario está en la página de login")
     public void que_el_usuario_esta_en_la_pagina_de_login() {
-        theActorCalled("Usuario").attemptsTo(AbrirSwagLabs.paginaLogin());
+        theActorCalled("Luisa").attemptsTo(AbrirSwagLabs.paginaLogin());
     }
 
     @Cuando("inicia sesión con usuario {string} y contraseña {string}")
