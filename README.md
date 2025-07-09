@@ -1,4 +1,4 @@
-# Proyecto de Curso Serenity BDD 
+# Proyecto de Curso Serenity BDD
 
 Este es un proyecto de automatización usando Serenity BDD con Java, Gradle y Cucumber.
 
@@ -11,6 +11,7 @@ Este es un proyecto de automatización usando Serenity BDD con Java, Gradle y Cu
 - Selenium WebDriver
 
 ## Estructura del proyecto
+
 src/
 main/
 java/
@@ -25,6 +26,17 @@ stepDefinitions/
 ./gradlew clean test aggregate
 ```
 
-
 ## Autor
+
 Luisa Fernanda Avila
+
+
+**Temas Vistos**
+
+---
+
+
+| Numeral | Descripción |
+| :-------- | :------------- |
+| 1       | Cucumber     |
+| 2       |              |
