@@ -1,7 +1,5 @@
 package mystore.acciones;
 
-import mystore.constantes.Constantes;
-import mystore.ui.PaginaLogin;
 import mystore.ui.PaginaMiCuenta;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;

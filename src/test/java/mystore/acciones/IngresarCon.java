@@ -7,7 +7,6 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.EnterValueIntoBy;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.Keys;
 

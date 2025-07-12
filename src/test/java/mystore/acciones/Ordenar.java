@@ -1,7 +1,6 @@
 package mystore.acciones;
 
 
-import io.cucumber.java.nl.Stel;
 import mystore.ui.PaginaCategoriaWomen;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
@@ -9,10 +8,8 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Scroll;
-import net.serenitybdd.screenplay.actions.ScrollTo;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.By;
 
 
 public class Ordenar implements Task {
