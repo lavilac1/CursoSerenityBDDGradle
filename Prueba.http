@@ -1,0 +1,8 @@
+POST https://dummyjson.com/auth/login 
+Accept:'*'
+Content-Type: application/json
+
+{
+  "username": "emilys",
+  "password": "emilyspass"
+}
