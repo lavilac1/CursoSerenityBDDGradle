@@ -16,6 +16,9 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Managed;
 import org.openqa.selenium.WebDriver;
+import io.cucumber.java.es.Dado;
+import io.cucumber.java.es.Cuando;
+import io.cucumber.java.es.Entonces;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -79,4 +82,6 @@ public class LoginStepDefinitions {
                         equalTo(nombreProducto))
         );
     }
+
+    
 }

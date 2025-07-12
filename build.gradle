@@ -45,8 +45,11 @@ dependencies {
             "org.junit.platform:junit-platform-launcher:1.8.2",
             "org.junit.jupiter:junit-jupiter-engine:5.8.2",
             "org.junit.vintage:junit-vintage-engine:5.8.2",
-            "org.assertj:assertj-core:${assertJVersion}"
+            "org.assertj:assertj-core:${assertJVersion}",
+            "io.cucumber:cucumber-java:7.14.0",
+            "io.cucumber:cucumber-picocontainer:7.14.0"
 }
+
 
 test {
     testLogging.showStandardStreams = true
