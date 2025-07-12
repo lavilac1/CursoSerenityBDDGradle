@@ -6,9 +6,10 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = "src/test/resources/features/loguin_usuario.feature",
+        features = "src/test/resources/features/buscar_hoteles.feature",
         glue = "mystore.stepsDefinition",
         plugin = {"pretty"}
 )
-public class LoginRunner {
+public class BuscarRunner {
+    
 }
