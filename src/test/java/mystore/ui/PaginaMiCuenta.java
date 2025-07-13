@@ -9,4 +9,6 @@ public class PaginaMiCuenta {
     .located(By.xpath( "/html[1]/body[1]/div[4]/div[1]/div[1]/div[1]/div[2]/div[3]/div[2]/div[2]/div[3]/div[4]/div[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/h3[1]/a[1]/div[1]"));
 
 
+    public static Target LBL_TITULO=Target.the("titulo busqueda")
+    .located(By.xpath("//h1[@class='b87c397a13 cacb5ff522']"));
 }

@@ -54,5 +54,10 @@ public class BuscarHotelesStepDefinition {
         );
         
     }
+
+    @When("selecciona mas habitaciones")
+    public void selecciona_mas_habitaciones() {
+        // Write code here that turns the phrase above into concrete actions
+    }
     
 }
