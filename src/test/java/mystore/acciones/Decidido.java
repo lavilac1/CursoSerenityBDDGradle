@@ -13,7 +13,7 @@ public class Decidido implements Task {
     public Decidido() {
     }
 
-    public static Performable ingresarConUsuarioYcontrasena() {
+    public static Performable navegarALaPagina() {
         return instrumented(Decidido.class);
     }
 
