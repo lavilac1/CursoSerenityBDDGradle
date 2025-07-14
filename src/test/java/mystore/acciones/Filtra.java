@@ -12,6 +12,7 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Scroll;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -32,13 +33,19 @@ public class Filtra implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo( 
-            Enter.theValue(ciudad).into(PaginaInicial.BTN_BUSQUEDA).thenHit(Keys.ARROW_DOWN).thenHit(Keys.ENTER),
-            WaitUntil.the(PaginaInicial.BTN_HABITACION, isVisible()).forNoMoreThan(10).seconds(),
-            Click.on(PaginaInicial.BTN_HABITACION),
-             WaitUntil.the(PaginaInicial.BTN_AGREGAR, isVisible()).forNoMoreThan(10).seconds(),
-            Click.on(PaginaInicial.BTN_AGREGAR),
-             WaitUntil.the(PaginaInicial.BTN_BUSCAR, isVisible()).forNoMoreThan(10).seconds(),
+            WaitUntil.the(PaginaInicial.BTN_LISTO, isVisible()).forNoMoreThan(15).seconds(),
+            Click.on(PaginaInicial.BTN_LISTO),
+            WaitUntil.the(PaginaInicial.BTN_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds(),
+            Click.on(PaginaInicial.BTN_BUSQUEDA),
+            WaitUntil.the(PaginaInicial.BTN_BUSQUEDA, isVisible()).forNoMoreThan(10).seconds(),
+            Enter.theValue(ciudad).into(PaginaInicial.TXT_BUSQUEDA).thenHit(Keys.ENTER),
+            WaitUntil.the(PaginaInicial.BTN_BUSCAR, isVisible()).forNoMoreThan(10).seconds(),
             Click.on(PaginaInicial.BTN_BUSCAR));
+            //WaitUntil.the(PaginaInicial.BTN_HABITACION, isVisible()).forNoMoreThan(10).seconds(),
+            //Click.on(PaginaInicial.BTN_HABITACION),
+             //WaitUntil.the(PaginaInicial.BTN_AGREGAR, isVisible()).forNoMoreThan(10).seconds(),
+            //Click.on(PaginaInicial.BTN_AGREGAR),
+             
        
     }
 

@@ -10,5 +10,5 @@ public class PaginaMiCuenta {
 
 
     public static Target LBL_TITULO=Target.the("titulo busqueda")
-    .located(By.xpath("//h1[@class='b87c397a13 cacb5ff522']"));
+    .located(By.xpath("//div[@data-stid='results-header-message']"));
 }

@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.questions.Text;
 public class VisualizaHoteles  {
 
    public static Question <String> subtitulo(){
-        return actor -> Text.of(PaginaMiCuenta.LINK_NOMBRERESULTADO)
+        return actor -> Text.of(PaginaMiCuenta.LBL_TITULO)
                 .answeredBy(actor);
     }
 

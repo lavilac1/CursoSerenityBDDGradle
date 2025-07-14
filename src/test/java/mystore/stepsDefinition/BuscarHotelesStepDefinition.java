@@ -38,26 +38,22 @@ public class BuscarHotelesStepDefinition {
     }
 
 
-
+    @Step ("El ingresa el municipio buscar")
     @When("ingresa la ciudad {string}")
     public void ingresa_la_ciudad(String ciudad) {
         actor.attemptsTo(Filtra.por(ciudad));
        
     }
 
-     @Then("deberia ver el hotel {string}")
-    public void deberia_ver_el_hotel(String nombrehotel) {
+     
+    @Step ("Visualiza la cantidad de propiedades definidas")
+    @Then("deberia ver {string}")
+    public void deberia_ver(String propiedades) {
         actor.should(
-                seeThat("El primer hotel es Hotel dan carton",
+                seeThat("Hoteles ubicados en Urrao",
                         VisualizaHoteles.subtitulo(),
-                        equalTo(nombrehotel))
+                        equalTo(propiedades))
         );
-        
-    }
-
-    @When("selecciona mas habitaciones")
-    public void selecciona_mas_habitaciones() {
-        // Write code here that turns the phrase above into concrete actions
     }
     
 }
