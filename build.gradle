@@ -35,8 +35,8 @@ ext {
 
 dependencies {
     implementation "ch.qos.logback:logback-classic:${logbackVersion}"
-    implementation 'org.apache.poi:poi:5.2.5'            // Para .xls
-    implementation 'org.apache.poi:poi-ooxml:5.2.5'      // Para .xlsx
+    implementation 'org.apache.poi:poi:5.2.5'
+    implementation 'org.apache.poi:poi-ooxml:5.2.5'
 
     testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
     testImplementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
