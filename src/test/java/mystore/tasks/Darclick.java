@@ -1,6 +1,5 @@
-package mystore.acciones;
+package mystore.tasks;
 
-import mystore.ui.PaginaMiCuenta;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
@@ -10,6 +9,8 @@ import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+
+import mystore.userinterfaces.PaginaMiCuenta;
 
 
 public class Darclick implements Task {

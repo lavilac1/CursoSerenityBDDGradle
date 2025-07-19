@@ -2,10 +2,9 @@ package mystore.stepsDefinition;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import mystore.acciones.Darclick;
-import mystore.acciones.Ordenar;
-import mystore.preguntas.LaPaginaMiCuenta;
-
+import mystore.questions.LaPaginaMiCuenta;
+import mystore.tasks.Darclick;
+import mystore.tasks.Ordenar;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;

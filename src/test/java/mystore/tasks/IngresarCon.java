@@ -1,6 +1,5 @@
-package mystore.acciones;
+package mystore.tasks;
 
-import mystore.ui.PaginaLogin;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
@@ -9,6 +8,8 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.Keys;
+
+import mystore.userinterfaces.PaginaLogin;
 
 public class IngresarCon implements Task {
 

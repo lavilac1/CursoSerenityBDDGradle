@@ -1,7 +1,7 @@
-package mystore.acciones;
+package mystore.tasks;
 
 
-import mystore.ui.PaginaCategoriaWomen;
+import mystore.userinterfaces.PaginaCategoriaWomen;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;

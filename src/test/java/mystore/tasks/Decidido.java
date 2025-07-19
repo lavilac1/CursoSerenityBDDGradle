@@ -1,12 +1,13 @@
-package mystore.acciones;
+package mystore.tasks;
 
-import mystore.constantes.Constantes;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.thucydides.core.annotations.Step;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+
+import mystore.constants.Constantes;
 
 public class Decidido implements Task {
 

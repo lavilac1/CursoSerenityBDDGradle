@@ -1,4 +1,4 @@
-package mystore.acciones;
+package mystore.tasks;
 
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;

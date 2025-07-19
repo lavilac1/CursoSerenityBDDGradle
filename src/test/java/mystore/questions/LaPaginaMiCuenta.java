@@ -1,7 +1,7 @@
-package mystore.preguntas;
+package mystore.questions;
 
-import mystore.ui.PaginaCategoriaWomen;
-import mystore.ui.PaginaMiCuenta;
+import mystore.userinterfaces.PaginaCategoriaWomen;
+import mystore.userinterfaces.PaginaMiCuenta;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 

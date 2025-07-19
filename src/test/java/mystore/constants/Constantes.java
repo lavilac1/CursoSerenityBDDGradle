@@ -1,4 +1,4 @@
-package mystore.constantes;
+package mystore.constants;
 
 public class Constantes
 {

@@ -1,4 +1,4 @@
-package mystore.ui;
+package mystore.userinterfaces;
 
 import net.serenitybdd.screenplay.targets.Target;
 
