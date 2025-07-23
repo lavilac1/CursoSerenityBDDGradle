@@ -13,13 +13,18 @@ public class FormularioUsuario {
     public static final Target INPUT_EMAIL = Target.the("campo de correo")
         .located(By.id("userEmail"));
 
-    public static final Target RADIO_GENERO = Target.the("opción de género")
-        .located(By.xpath("//label[text()='Female']")); // Se puede parametrizar
+    public static Target genero(String opcion) {
+    return Target.the("Botón de género")
+            .located(By.xpath("//label[text()='" + opcion + "']"));
+}
 
     public static final Target INPUT_TELEFONO = Target.the("campo de teléfono")
         .located(By.id("userNumber"));
 
     public static final Target BTN_SUBMIT = Target.the("botón de enviar")
         .located(By.id("submit"));
+
+    public static final Target LBL_EXITOSO= Target.the("Confirmación guardado")
+        .located(By.id("example-modal-sizes-title-lg"));
     
 }

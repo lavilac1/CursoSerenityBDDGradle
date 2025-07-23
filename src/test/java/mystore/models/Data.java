@@ -1,16 +1,16 @@
 package mystore.models;
 
-public class Usuario {
+public class Data {
 //Mapeo los campos que estan en el excel
 
-   private String nombre;
+    private String nombre;
     private String apellido;
     private String email;
     private String genero;
     private String telefono;
 
     // Constructor
-    public Usuario(String nombre, String apellido, String email, String genero, String telefono) {
+    public Data(String nombre, String apellido, String email, String genero, String telefono) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.email = email;

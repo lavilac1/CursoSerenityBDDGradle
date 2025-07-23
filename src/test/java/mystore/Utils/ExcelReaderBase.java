@@ -1,70 +1,75 @@
 package mystore.Utils;
 
-/*Workbook, Sheet, Row, Cell: representan las partes del archivo Excel.
-XSSFWorkbook: se usa para leer archivos .xlsx (Excel modernos).
-FileInputStream: para leer el archivo Excel desde el sistema de archivos.
-IOException: para manejar errores de lectura.
-List, Map, ArrayList, HashMap: para manejar los datos leídos del Excel como listas de mapas.
- */
+import java.io.FileInputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.lang.reflect.Field;
+
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.*;
 
 public class ExcelReaderBase {
-    /*Recibe la ruta del archivo (filePath) y el nombre de la hoja (sheetName).
+    /*Usamos un método genérico <T>, para que T pueda ser cualquier tipo de objeto (por ejemplo: Usuario, Cliente, etc.).
 
-Retorna una lista de mapas, donde cada mapa representa una fila con sus valores:
-Ejemplo de una fila como mapa:
-{ "nombre"="Luisa", "monto"="5000000", "cedula"="123456789" } */
-    public static List<Map<String, String>> getData(String filePath, String sheetName) {
+        Recibimos como parámetros:
+        filePath: ruta del archivo Excel.
+        sheetName: nombre de la hoja.
+        clazz: la clase modelo a la que queremos mapear los datos (ej. Usuario.class). */
+      public static <T> List<T> readExcel(String filePath, String sheetName, Class<T> clazz) {
+        
+        List<T> dataList = new ArrayList<>();
 
-        // Crea una lista vacía para guardar todos los mapas (cada fila de Excel será un mapa en esta lista).
-        List<Map<String, String>> dataList = new ArrayList<>();
 
-        /*Abre el archivo Excel con FileInputStream y lo carga en un objeto Workbook.
-El try (...) se llama try-with-resources y cierra automáticamente los recursos al finalizar (buena práctica).
- */
+        /*Abrimos el archivo Excel (.xlsx) y accedimos a la hoja por nombre.
+        Leímos la primera fila, que es donde se esperan los nombres de las columnas (cabeceras). */
+
         try (FileInputStream fis = new FileInputStream(filePath);
+        
              Workbook workbook = new XSSFWorkbook(fis)) {
 
-                // Accede a la hoja específica por nombre.
             Sheet sheet = workbook.getSheet(sheetName);
-                /*Lee la primera fila del Excel (fila 0), que normalmente contiene los nombres de las columnas (cabecera).
-Esto se usará como claves en cada mapa. */
             Row headerRow = sheet.getRow(0);
 
-                /* Comienza un ciclo que recorre desde la segunda fila (índice 1) hasta la última fila del Excel.
-sheet.getLastRowNum() retorna el número de la última fila con contenido. */
+
+        /*Recorremos desde la fila 1 (porque la fila 0 es la cabecera).
+        Usamos clazz.getDeclaredConstructor().newInstance() para crear una nueva instancia
+         del objeto T, es decir, del modelo (Usuario, Cliente, etc.). */
+
             for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-                /*Crea un nuevo mapa para cada fila y obtiene la fila actual (row). */
-                Map<String, String> dataMap = new HashMap<>();
                 Row row = sheet.getRow(i);
+                T instance = clazz.getDeclaredConstructor().newInstance();
 
-                /*Recorre todas las columnas (celdas) de la fila actual.
-                headerRow.getLastCellNum() indica cuántas columnas hay. */
+        /*Obtenemos el nombre de la columna (clave) desde la cabecera.
+        Obtenemos el valor de la celda actual (valor).
+        Buscamos en la clase clazz un campo con ese nombre (getDeclaredField(key)).
+        Si lo encuentra, lo hacemos accesible (setAccessible(true)) y le asignamos el valor 
+        (field.set(instance, value)). */
+
                 for (int j = 0; j < headerRow.getLastCellNum(); j++) {
-
-                    /*key: obtiene el nombre de la columna (desde la cabecera).
-                    value: obtiene el valor de la celda de esa columna en la fila actual.
-                    Guarda el par clave-valor en el dataMap. */
-                    String key = headerRow.getCell(j).getStringCellValue();
+                    String key = headerRow.getCell(j).getStringCellValue().trim().toLowerCase();
                     Cell cell = row.getCell(j);
-                    String value = cell != null ? cell.toString() : "";
-                    dataMap.put(key, value);
+                    String value = (cell != null) ? cell.toString().trim() : "";
+
+                    try {
+                        Field field = clazz.getDeclaredField(key);
+                        field.setAccessible(true);
+                        field.set(instance, value);
+                    } catch (NoSuchFieldException e) {
+                        // Si la propiedad no existe, solo ignórala
+                        System.out.println("Campo ignorado: " + key);
+                    }
                 }
-                // Una vez que termina de leer toda la fila, la agrega a la lista general dataList.
-                dataList.add(dataMap);
+                //Una vez que llenamos un objeto con los datos de una fila, lo agregamos a la lista.
+                dataList.add(instance);
             }
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        //Retorna la lista de filas leídas como mapas. Cada elemento representa una fila del Excel.
+
+        //Retornamos la lista de objetos (Usuario, Cliente, etc.) con todos los datos del Excel.
         return dataList;
     }
-    
 }
