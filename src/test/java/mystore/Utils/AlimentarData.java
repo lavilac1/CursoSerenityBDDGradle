@@ -1,11 +1,9 @@
 package mystore.Utils;
 
-import static org.mockito.Mockito.never;
 import mystore.models.Data;
 
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Row;
-import net.bytebuddy.asm.Advice.This;
 
 public class AlimentarData {
 

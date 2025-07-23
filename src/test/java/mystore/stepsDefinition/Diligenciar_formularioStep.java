@@ -5,18 +5,11 @@ import io.cucumber.java.es.Cuando;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;
 import mystore.Utils.AlimentarData;
-import mystore.Utils.ExcelReader;
-import mystore.Utils.HaspDatosExcel;
 import net.serenitybdd.screenplay.actions.Open;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 import net.thucydides.core.annotations.Step;
-
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
-
-import java.util.List;
-
-import io.cucumber.java.es.*;
 import mystore.models.Data;
 import mystore.questions.Eltitulo;
 import mystore.tasks.DiligenciarFormulario;
@@ -25,8 +18,6 @@ import static org.hamcrest.Matchers.equalTo;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.*;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
-import mystore.Utils.AlimentarData;
-import mystore.models.Data; 
 
 
 
