@@ -1,4 +1,4 @@
-package mystore.userinterfaces;
+package co.com.CRUD.userinterfaces;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 

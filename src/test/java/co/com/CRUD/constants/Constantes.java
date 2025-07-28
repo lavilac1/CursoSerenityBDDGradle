@@ -1,4 +1,4 @@
-package mystore.constants;
+package co.com.CRUD.constants;
 
 public class Constantes
 {
