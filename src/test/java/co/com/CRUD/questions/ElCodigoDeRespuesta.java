@@ -3,14 +3,12 @@ package co.com.CRUD.questions;
 import net.serenitybdd.rest.SerenityRest;
 import net.serenitybdd.screenplay.Question;
 
-public class ElCodigoDeRespuesta implements Question<Integer> {
-    public static ElCodigoDeRespuesta fue() {
-        return new ElCodigoDeRespuesta();
+public class ElCodigoDeRespuesta  {
+    public static Question<Integer> fue() {
+        return actor -> {
+            int statusCode = SerenityRest.lastResponse().statusCode();
+            System.out.println("📡 Código de respuesta: " + statusCode);
+            return statusCode;
+        };
     }
-
-    @Override
-    public Integer answeredBy(net.serenitybdd.screenplay.Actor actor) {
-        return SerenityRest.lastResponse().statusCode();
-    }
-    
 }

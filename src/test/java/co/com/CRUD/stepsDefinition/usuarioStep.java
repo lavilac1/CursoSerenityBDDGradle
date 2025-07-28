@@ -42,9 +42,9 @@ public class usuarioStep {
 
     @Entonces("debe recibir el codigo {int}")
     public void debeRecibirElCodigo(Integer codigo) {
-        theActorInTheSpotlight().should(
-            seeThat(ElCodigoDeRespuesta.fue(), is(codigo))
-        );
+       theActorInTheSpotlight().should(
+        seeThat("El código de respuesta fue", ElCodigoDeRespuesta.fue(), is(codigo))
+    );
     }
 
     @Dado("que el tester tiene un nuevo usuario")
@@ -65,11 +65,6 @@ public class usuarioStep {
         );
     }
 
-    @Y("ademas imprime la respuesta del servicio")
-    public void ademasImprimeRespuestaServicio() {
-         System.out.println("📥 Respuesta del servicio:\n" +
-        SerenityRest.lastResponse().getBody().asPrettyString());
-    
-    }
+
     
 }

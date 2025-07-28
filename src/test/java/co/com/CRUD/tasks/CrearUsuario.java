@@ -20,7 +20,6 @@ public class CrearUsuario implements Task {
     public <T extends Actor> void performAs(T actor) {
          System.out.println("Usuario a enviar: " + usuario);
         System.out.println("Endpoint: " + EndPoint.USUARIOS.path());
-        System.out.println("Usuario a enviar: " + usuario);
         actor.attemptsTo(
             ConstruirRequest.post(EndPoint.USUARIOS.path(), usuario)
         );
