@@ -1,13 +1,14 @@
 package co.com.CRUD.runners;
 
+import org.junit.runner.RunWith;
+
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
-import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-    features = "src/test/resources/features/usuario.feature",
-    glue = "co.com.CRUD.stepsDefinition",
+    features = "src/test/resources/features/Crearpersona.feature",
+    glue = {"co.com.CRUD.stepsDefinition","co.com.CRUD.setup" },
     snippets = CucumberOptions.SnippetType.CAMELCASE,
     plugin = {
         "pretty",
@@ -16,6 +17,6 @@ import org.junit.runner.RunWith;
     },
     monochrome = true
 )
-public class UsuarioRunner {
+public class CrearPersonaRunner {
     
 }
