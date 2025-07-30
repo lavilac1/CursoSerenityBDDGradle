@@ -15,3 +15,4 @@
             Ejemplos:
             | name | username | email        | Respuesta        |
             | Luis | luisillo | llu@test.com | CREACION_EXITOSA |
+            | Luci | Luchi    | luchi@test   | CREACION_EXITOSA |

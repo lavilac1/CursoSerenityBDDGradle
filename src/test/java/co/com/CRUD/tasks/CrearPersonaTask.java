@@ -3,6 +3,7 @@ package co.com.CRUD.tasks;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.github.dockerjava.api.model.Endpoint;
@@ -20,20 +21,19 @@ public class CrearPersonaTask implements Task {
     private final Map<String, Object> informacion= new HashMap<>();
     private String endpoint;
 
-    public CrearPersonaTask(DataTable informacion){
-        this.body=PersonDataModel.obtenerBody(this.informacion);
-    
-
+   public CrearPersonaTask(Map<String, Object> informacion) {
+    this.body = PersonDataModel.obtenerBody(informacion);
     }
 
 
-    public static CrearPersonaTask conBody(DataTable informacion){
-        return instrumented(CrearPersonaTask.class, informacion);
-
+    public static CrearPersonaTask conBody(DataTable dataTable){
+            List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
+        return instrumented(CrearPersonaTask.class, new HashMap<>(rows.get(0)));
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+         System.out.println("🔍 Body enviado al endpoint: " + body);
       actor.attemptsTo(
             ConsumirPost.al(EndPoint.CREAR_USUARIO, body)
       );
