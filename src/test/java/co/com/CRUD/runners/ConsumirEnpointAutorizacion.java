@@ -1,5 +1,6 @@
 package co.com.CRUD.runners;
 
+
 import org.junit.runner.RunWith;
 
 import io.cucumber.junit.CucumberOptions;
@@ -7,8 +8,9 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-    features = "src/test/resources/features/Crearpersona.feature",
+    features = "src/test/resources/features/consumoConToken.feature",
     glue = {"co.com.CRUD.stepsDefinition","co.com.CRUD.setup" },
+      tags = "@Caso1",
     snippets = CucumberOptions.SnippetType.CAMELCASE,
     plugin = {
         "pretty",
@@ -17,6 +19,6 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
     },
     monochrome = true
 )
-public class CrearPersonaRunner {
+public class ConsumirEnpointAutorizacion {
     
 }
